@@ -1,9 +1,8 @@
 #ifndef PC_H_INCLUDED
 #define PC_H_INCLUDED
 
-#include "drawable.h"
-
-class PC: public Drawable {
+class PC
+{
     private:
         int health;
         float x, y;
@@ -18,5 +17,6 @@ class PC: public Drawable {
         void update();
         void draw();
 };
+
 
 #endif
