@@ -1,20 +1,24 @@
 #include "loop.h"
 
 // main loop
-void loop(GLFWwindow* window) {
-    while (!glfwWindowShouldClose(window))
-    {
-        logic();
-        render();
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-    }
+void loop(GLFWwindow* window, std::initializer_list<Drawable*> list) {
+  while (!glfwWindowShouldClose(window))
+  {
+    logic(list);
+    render(list);
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+  }
 }
 
-void render() {
-    glClear(GL_COLOR_BUFFER_BIT);
+void render(std::initializer_list<Drawable*> list) {
+  for (Drawable* elem : list) {
+    elem->draw();
+  }
 }
 
-void logic() {
-
+void logic(std::initializer_list<Drawable*> list) {
+  for (Drawable* elem : list) {
+    elem->update();
+  }
 }

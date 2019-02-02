@@ -1,64 +1,47 @@
 #include "pc.h"
 
-#include <GLFW/glfw3.h>
-
-/**
-	Return health of player
-*/
-int PC::getHealth(void)
-{
+int PC::getHealth(void) {
 	return health;
 }
 
-/**
-	Return X location
-*/
-float PC::getX(void)
-{
+float PC::getX(void) {
 	return x;
 }
 
-/**
-	Return y location
-*/
-float PC::getY(void)
-{
+float PC::getY(void) {
 	return y;
 }
 
-/**
-	Start tank moving forward
-*/
-void PC::startMoving(void)
-{
+void PC::startMoving(void) {
 	moving = true;
 }
 
-/**
-	Stop tank moving forward
-*/
-void PC::stopMoving(void)
-{
+void PC::stopMoving(void) {
 	moving = false;
 }
 
-/**
-	Player's update function
-*/
-void PC::update()
-{
+void PC::update() {
 
 }
 
-/**
-	<Insert obvious comment here>
-*/
-void PC::draw()
-{
-	glBegin(GL_QUADS);
-    glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(1.0f, 1.0f, 0.0f);
-    glVertex3f(0.0f, 1.0f, 0.0f);
+void PC::draw() {
+
+//  float vertices[] = {
+//     0.0f,  0.5f, // Vertex 1 (X, Y)
+//     0.5f, -0.5f, // Vertex 2 (X, Y)
+//    -0.5f, -0.5f  // Vertex 3 (X, Y)
+//  };
+//
+//  GLuint vbo;
+//  glGenBuffers(1, &vbo); // Generate 1 buffer
+//
+//  glBindBuffer(GL_ARRAY_BUFFER, vbo);
+//
+//  glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+  glShadeModel(GL_SMOOTH);
+	glBegin(GL_TRIANGLES);
+	glVertex2f(0.0f,  0.5f);
+  glVertex2f(0.5f, -0.5f);
+  glVertex2f(-0.5f, -0.5f);
 	glEnd();
 }

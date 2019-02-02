@@ -31,22 +31,30 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
-			<Add directory="C:/glfw/include" />
+			<Add option="-DGLEW_STATIC" />
+			<Add directory="include" />
 		</Compiler>
 		<Linker>
+			<Add library="glew32" />
 			<Add library="glfw3" />
 			<Add library="opengl32" />
+			<Add library="glu32" />
 			<Add library="gdi32" />
-			<Add directory="C:/glfw/lib-mingw" />
 		</Linker>
-		<Unit filename="input.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
-		<Unit filename="loop.cpp" />
-		<Unit filename="loop.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="pc.cpp" />
-		<Unit filename="pc.h" />
+		<Unit filename="include/camera.h" />
+		<Unit filename="include/drawable.h" />
+		<Unit filename="include/grid.h" />
+		<Unit filename="include/input.h" />
+		<Unit filename="include/level.h" />
+		<Unit filename="include/loop.h" />
+		<Unit filename="include/pc.h" />
+		<Unit filename="src/camera.cpp" />
+		<Unit filename="src/grid.cpp" />
+		<Unit filename="src/input.cpp" />
+		<Unit filename="src/level.cpp" />
+		<Unit filename="src/loop.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/pc.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
